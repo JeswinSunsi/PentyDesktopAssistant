@@ -9,19 +9,19 @@ Apart from answering simple questions, the searchbar can also be used to perform
   - Shows out the MAC address
 - **Shorten {link address}**
   - Shortens the provided link automatically through tinyurl.com. Do not type out the angle brackets.
-- **shutdown/ shtdwn**
+- **Shutdown/ shtdwn**
   - Quick command to shutdown the device
-- **restart/ restrt**
+- **Restart/ restrt**
   - Quick command to restart the device
 - **Eval {math problem}**
   - Uses WolframAlpha to solve complex math problems.
-- **download speed/ download**
+- **Download speed/ download**
   - Shows the download speed (May not be completely accurate)
-- **upload speed/ upload**
+- **Upload speed/ upload**
   - Shows the upload speed (May not be completely accurate)
-- **about**
+- **About**
   - Displays a quick 'About Penty'
-- **system**
+- **System**
   - Displays the System details (Operating system, Architecture, etc.)
   
 ## Icon use
