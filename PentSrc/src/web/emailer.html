@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "description" content = "Email Tab">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>PENTY</title>
+    <script type = "text/javascript" src = "swag-alert.min.js"></script>
+    <script type="text/javascript" src="/eel.js"></script>
+    <link rel = "stylesheet" type = "text/css" href = "swag-alert.css">
+    <link href="https://fonts.googleapis.com/css2?family=B612&display=swap" rel="stylesheet">
+    <style>
+    body{
+      background-image: url('Media/BgEmail.png');
+      background-repeat: no-repeat;
+      overflow: hidden;
+      background-size: cover;
+    }
+    #searchbar{
+      width: 74%;
+      background: none;
+      outline: none;
+      border: none;
+      font-size: 18.75px;
+      font-weight: 100;
+      position: relative;
+      top: 8px;
+      left: 9px;
+    }
+    #content{
+      resize: none;
+      color: black;
+      border: none;
+      outline: none;
+      background: none;
+      font-size: 17px;
+      font-family: 'B612', sans-serif;
+      position: relative;
+      width: 87%;
+      top: 22px;
+      left: 7px;
+      overflow: hidden;
+      line-height: 17px;
+    }
+    #send{
+      position: relative;
+      width: 35px;
+      height: 35px;
+      bottom: 91px;
+      right: 38px;
+      outline: none;
+    }
+    #send:active{
+      transform: translateX(2px);
+    }
+    </style>
+    <script>
+
+    async function sendEmail() {
+                    var recipient = document.getElementById('searchbar').value
+                    var content = document.getElementById('content').value
+                    var sending = await eel.email(recipient, content)();
+                    swagAlert({
+                 title: "Penty",
+                 text: sending});
+   setTimeout( function() { window.location = 'main.html' }, 2500 );
+                 
+ }
+  </script>
+</head>
+<body>
+<input type = "email" id = "searchbar" placeholder = "Enter a valid email..">
+<textarea id = "content" rows = "6"></textarea>
+<input type = "image" id = "send" src = "Media/Icnsend.svg" onclick = "sendEmail()">
+</body>

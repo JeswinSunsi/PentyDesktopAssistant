@@ -1,0 +1,69 @@
+body
+{
+  background-image: url('Media/BgImage.png');
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-size: cover;
+}
+
+input[type=text]
+{
+  border: none;
+  background: transparent;
+  width: 50%;
+  color: black;
+  font-size: 16px;
+  margin-left: 3px;
+  font-family: 'B612', sans-serif;
+  margin-top: -1px;
+  margin-left: 8px;
+}
+
+input[type=text]:focus
+{
+  outline: none;
+}
+
+input[type=image]
+{
+  outline: none;
+  border: none;
+  height: 40px;
+  width: 40px;
+  position:relative;
+  margin-top: -11px;
+  margin-left: 36px;
+}
+
+input[type=image]:active
+{
+  transform: translateX(2px);
+}
+
+.inputTag
+{
+  margin-left: 10px;
+  float: left;
+}
+
+#web
+{
+  margin-top: 39px;
+  margin-left: -294px;
+  width: 35px;
+  height: 36px;
+}
+
+#about
+{
+  bottom: -54px;
+  left: -241px;
+}
+
+#settings
+{
+  bottom: -58px;
+  right: 77px;
+  width: 43px;
+  height: 52px;
+}
