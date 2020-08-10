@@ -44,7 +44,7 @@ Apart from answering simple questions, the searchbar can also be used to perform
   
 ## Icon use
 There are four main icons on the main page. These support the main script for more functions.
-Usage (from top-left, top-right, bottom-left, bottom-right)
+Usage (top-left, top-right, bottom-left, bottom-right)
 - **Quick Browser**
   - This can come handy when Pent cannot understand your question, cannot display a suitable answer, or the user just wants to quickly open the browser
 - **Gmail Sender**
