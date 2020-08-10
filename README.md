@@ -6,7 +6,9 @@ Penty is a quick Desktop Assistant programmed with JS and Python as its backend 
 
 ## Searchbar commands
 Apart from answering simple questions, the searchbar can also be used to perform some quick actions when certain commands are typed out. All the commands work in both upper and lowercases.
+
 ![pent displays a joke](https://github.com/JeswinSunsi/PentyDesktopAssistant/blob/master/PentSrc/src/web/Media/JokeExample.PNG)
+
 - **IP**
   - This shows the lan IP of the device
 - **MAC**
