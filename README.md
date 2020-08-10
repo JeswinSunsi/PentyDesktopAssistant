@@ -1,8 +1,18 @@
 # Penty Desktop Assistant
 
-Penty is a quick Desktop Assistant programmed with JS and Python as its backend and HTML and CSS as its front.  Took just over a month to create v1.0. It has a few features, like an in-built gmail sender, link shortener and a quick-open browser. It uses a Python module named Eel to connect the backend and the GUI (https://github.com/samuelhwilliams/Eel/)
+Penty is a Desktop Assistant programmed with JS and Python for its backend and HTML and CSS as its front. It has some cool in-built features, like an emailer, link shortener and a quick-open browser. The main highlight is that it can fetch simple answers from the web, such as the temperature, birthdates, and other quick answers and display them in a visually pleasing window. It uses a Python module named Eel to connect the backend to the GUI (https://github.com/samuelhwilliams/Eel/)
 
 ![pent start screen](https://github.com/JeswinSunsi/PentyDesktopAssistant/blob/master/PentSrc/src/web/Media/StartScrExample.PNG)
+
+## Prerequisites 
+
+### Modules
+Until you package Penty into an executable, you will have to manually import a lot of modules. The easiest way to do this is with PIP.
+```pip install Eel, wolframalpha, wikipedia, pyshorteners, speedtest-cli, win10toast, getmac, pyjokes```
+
+### Others
+You will need a google app password for the mailer (https://support.google.com/accounts/answer/185833?hl=en)
+If you need the added functionality of WolframAlpha, you'll have to get a free API Key (https://products.wolframalpha.com/simple-api/documentation/)
 
 ## Searchbar commands
 Apart from answering simple questions, the searchbar can also be used to perform some quick actions when certain commands are typed out. All the commands work in both upper and lowercases.
