@@ -1,4 +1,5 @@
 # Penty Desktop Assistant
+![Penty start page Image] (https://drive.google.com/file/d/1QedGUGTmsppRmZMDNNw29N7wLhda2J2Y/view?usp=sharing)
 Penty is a quick Desktop Assistant programmed with JS and Python as its backend and HTML and CSS as its front.  Took just over a month to create v1.0. It has a few features, like an in-built gmail sender, link shortener and a quick-open browser. It uses a Python module named Eel to connect the backend and the GUI .(https://github.com/samuelhwilliams/Eel/)
 
 ## Searchbar commands
