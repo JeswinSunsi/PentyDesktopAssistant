@@ -13,6 +13,7 @@ Until you package Penty into an executable, you will have to manually import a l
 
 ### Others
 You will need a google app password for the mailer. (https://support.google.com/accounts/answer/185833?hl=en)
+
 If you need the added functionality of WolframAlpha, you'll have to get a free API Key (https://products.wolframalpha.com/simple-api/documentation/)
 
 ## Searchbar commands
