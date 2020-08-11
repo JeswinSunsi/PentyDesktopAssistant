@@ -57,6 +57,8 @@ Usage (top-left, top-right, bottom-left, bottom-right)
 ## Packaging Pent
 Packaging Pent into a distributable .Exe is pretty straightforward. Pip install pyinstaller if you dont already have it. Then, delete the mail_creds.txt from the web folder.
 Navigate to the src directory where the web folder and App.py file is kept, through your terminal. Then, run 
+
 ```python -m eel app.py web --onefile```
+
 You can use most valid pyinstaller flags except --noconsole. A workaround for this is added into app.py
 Your distributable file will be stored at src/dist. Move this to a new folder. Inside the folder, create a text document named mail_creds.txt and type in 1 and 2 on the first and second lines of the text file respectively. 
