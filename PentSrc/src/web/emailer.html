@@ -3,7 +3,6 @@
 <head>
     <meta charset = "UTF-8">
     <meta name = "description" content = "Email Tab">
-    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
     <meta name = "viewport" content = "width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>PENTY</title>
     <script type = "text/javascript" src = "swag-alert.min.js"></script>
@@ -56,7 +55,6 @@
     }
     </style>
     <script>
-
     async function sendEmail() {
                     var recipient = document.getElementById('searchbar').value
                     var content = document.getElementById('content').value
@@ -65,7 +63,10 @@
                  title: "Penty",
                  text: sending});
    setTimeout( function() { window.location = 'main.html' }, 2500 );
-                 
+
+  window.addEventListener("resize", function(){
+    window.resizeTo(471, 220);
+  });              
  }
   </script>
 </head>
