@@ -12,3 +12,8 @@ async function systemInfo() {
                            title: "Penty",
                            text: val});
 }
+
+
+window.addEventListener("resize", function(){
+window.resizeTo(471, 220);
+});
