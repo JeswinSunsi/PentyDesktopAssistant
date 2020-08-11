@@ -60,5 +60,5 @@ Navigate to the src directory where the web folder and App.py file is kept, thro
 
 ```python -m eel app.py web --onefile```
 
-You can use most valid pyinstaller flags except --noconsole. A workaround for this is added into app.py
-Your distributable file will be stored at src/dist. Move this to a new folder. Inside the folder, create a text document named mail_creds.txt and type in 1 and 2 on the first and second lines of the text file respectively. 
+You can use most valid pyinstaller flags except --noconsole. A workaround for this has already been added into app.py.
+Your distributable file will be stored at src/dist. Move this to a new folder. Inside the folder, create a text document named mail_creds.txt and type in 1 and 2 on the first and second lines of the text file respectively. Also, to avoid having to open a folder then a file to run the program, you can make a shortcut to app.exe and leave it somewhere outside the main folder.
