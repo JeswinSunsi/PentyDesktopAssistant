@@ -4,7 +4,6 @@
 <head>
     <meta charset = "UTF-8">
     <meta name = "description" content = "Browser Tab">
-    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
     <meta name = "viewport" content = "width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>PENTY</title>
     <script type = "text/javascript" src = "swag-alert.min.js"></script>
@@ -52,6 +51,9 @@
                 text: "Opening.."})
       setTimeout( function() { window.location = 'main.html' }, 3000 );
     }
+  window.addEventListener("resize", function(){
+    window.resizeTo(471, 220);
+  });
     </script>
 </head>
 
