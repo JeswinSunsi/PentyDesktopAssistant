@@ -13,7 +13,17 @@ async function systemInfo() {
                            text: val});
 }
 
-
 window.addEventListener("resize", function(){
 window.resizeTo(471, 220);
 });
+
+window.onload=function(){
+  var input = document.getElementById("data");
+  input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+          event.preventDefault();
+          document.getElementById("enterButton").click();
+      }
+  });
+
+}
