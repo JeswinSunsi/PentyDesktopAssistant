@@ -21,6 +21,8 @@ Apart from answering simple questions, the searchbar can also be used to perform
 
 ![pent displays a joke](https://github.com/JeswinSunsi/PentyDesktopAssistant/blob/master/PentSrc/src/web/Media/JokeExample.PNG)
 
+- **{Search term}**
+  - You can search for almost anything and Penty will spew out a brief description of it. Stuff like when was x born, national anthem of the Soviet Union, Who was Guido Van Rossum, all work perfectly.
 - **IP**
   - This shows the lan IP of the device
 - **MAC**
