@@ -9,7 +9,7 @@ Penty is a Desktop Assistant programmed with JS and Python for its backend and H
 ### Modules
 Until you package Penty into an executable, you will have to manually import a lot of modules. The easiest way to do this is with PIP.
 
-```pip install Eel, wolframalpha, wikipedia, pyshorteners, speedtest-cli, win10toast, getmac, pyjokes```
+You can install this from requirements.txt
 
 ### Others
 You will need a google app password for the mailer. (https://support.google.com/accounts/answer/185833?hl=en)
