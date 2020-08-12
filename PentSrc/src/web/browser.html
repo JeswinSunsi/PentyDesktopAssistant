@@ -4,6 +4,7 @@
 <head>
     <meta charset = "UTF-8">
     <meta name = "description" content = "Browser Tab">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
     <meta name = "viewport" content = "width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>PENTY</title>
     <script type = "text/javascript" src = "swag-alert.min.js"></script>
@@ -54,6 +55,15 @@
   window.addEventListener("resize", function(){
     window.resizeTo(471, 220);
   });
+  window.onload=function(){
+    var input = document.getElementById("searchbar");
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("searchIcon").click();
+        }
+    });
+  }
     </script>
 </head>
 
