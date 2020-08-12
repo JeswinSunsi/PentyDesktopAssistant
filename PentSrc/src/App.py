@@ -5,7 +5,7 @@
 import eel
 import wolframalpha
 import wikipedia
-import pyshorteners
+import pyshorteners.shorteners.tinyurl
 import speedtest
 import time
 import socket
@@ -21,20 +21,20 @@ from win10toast import ToastNotifier
 from getmac import getmac
 import pyjokes
 
+
+# Useful when packaging Penty into an exe, since --noconsole in pyinstaller returns an error for some reason.
 def hideConsole():
   whnd = ctypes.windll.kernel32.GetConsoleWindow()
   if whnd != 0:
      ctypes.windll.user32.ShowWindow(whnd, 0)
 hideConsole()
-# Useful when packaging Penty into an exe, since --noconsole in pyinstaller returns an error for some reason.
-
 
 eel.init('web') # Initialize the 'web' folder where frontend and js is stored.
 
 # Wolfram Alpha module
 @eel.expose
 def wlfrm(userinputglobal):
-  client = wolframalpha.Client('APP ID HERE') # Add your wolfram Alpha App ID Key here
+  client = wolframalpha.Client('34U93P-WGR36VG7WE') # Add your wolfram Alpha App ID Key here
   res = client.query(userinputglobal)
   answer = (next(res.results).text)
   return answer
@@ -50,14 +50,17 @@ def wikiped(userinputglobal):
 def email(RECV_ID, CONTENT):
   mainErrorMsg = "Something went wrong.."
   try:
-    MAIL_ID = linecache.getline(r"Web/mail_creds.txt", 1)
-    PASS = linecache.getline(r"Web/mail_creds.txt", 2)
-    server = smtplib.SMTP("smtp.gmail.com", 587)
-    server.starttls()
-    server.login(MAIL_ID, PASS)
-    server.sendmail( MAIL_ID, RECV_ID, CONTENT)
+    if CONTENT != '':
+      MAIL_ID = linecache.getline(r"web/mreds.txt", 1)
+      PASS = linecache.getline(r"web/mreds.txt", 2)
+      server = smtplib.SMTP("smtp.gmail.com", 587)
+      server.starttls()
+      server.login(MAIL_ID, PASS)
+      server.sendmail( MAIL_ID, RECV_ID, CONTENT)
+      return f"Sending mail to {RECV_ID}"
+    else:
+      return 'Cancelled mail successfully.'
     linecache.clearcache()
-    return f"Sending mail to {RECV_ID}"
   except (smtplib.SMTPAuthenticationError):
     return f"{mainErrorMsg} \n Please enter your credentials at mail settings."
   except (smtplib.SMTPRecipientsRefused):
@@ -127,18 +130,9 @@ def reminder():
     remind_text = remind_text.replace(infactor, "")
     remind_text = remind_text.replace("after", "")
     eel.sleep(timefactor)
-    retvalue = remind.show_toast("Reminder", remind_text, duration = 20)
+    retvalue = remind.show_toast("Reminder", remind_text, icon_path='fav.ico', duration = 20)
     return remind_text
     return retvalue
-
-# URL Shortner. Uses tinyurl.com
-@eel.expose
-def shortenurl():
-  url = userinputglobal.replace('shorten', "")
-  url = url[:0] + url[(0+1):]
-  shortened = pyshorteners.Shortener()
-  finallink = shortened.tinyurl.short(url)
-  return f"Your shortened URL is: {finallink}"
 
 # Quick Restart
 @eel.expose
@@ -156,10 +150,11 @@ def downloadcheck():
   full_answer = f"Download speed: {download}Mbps"
   return full_answer
 
-# Quick Complex Math Evaluator 
+# Quick Complex Math Evaluator
 @eel.expose
 def complexMath(question):
   actualQuestion = question.replace(' ', '+')
+  actualQuestion = actualQuestion.replace('eval', '')
   link = f'https://www.wolframalpha.com/input/?i={actualQuestion}'
   return webbrowser.open(link, new=0, autoraise=True)
 
@@ -176,11 +171,13 @@ def uploadcheck():
 # Function to change email username and passcode
 @eel.expose
 def emailSettings(email, passcode):
-  with open('web/mail_creds.txt', 'r') as emailAndPass:
+  with open('web/mreds.txt', 'r') as emailAndPass:
     data = emailAndPass.readlines()
-  data[0] = f'{email} \n'
-  data[1] = passcode
-  with open('web/mail_creds.txt', 'w') as emailAndPass:
+  if email != '' and passcode != '':
+    data[0] = f'{email} \n'
+    data[1] = passcode
+
+  with open('web/mreds.txt', 'w') as emailAndPass:
     emailAndPass.writelines(data)
 
 # The logic that connects it with the user io.
@@ -202,8 +199,6 @@ def mainBackend(userinput):
       return uploadcheck()
     elif "restart" in userinputglobal[0:7] or "restrt" in userinputglobal[0:6]:
       return restrt()
-    elif "shorten" in userinputglobal[0:7]:
-      return shortenurl()
     elif "remind" in userinputglobal[0:6] or "set reminder" in userinputglobal[0:12] or "reminder" in userinputglobal[0:8]:
       return reminder()
     elif "ip" in userinputglobal[0:2] or "ip address" in userinputglobal[0:10]:
@@ -218,7 +213,6 @@ def mainBackend(userinput):
         except:
           return wikiped(userinputglobal)
   except:
-    return "Oops. Something went wrong!"
+    return "Something went wrong.."
 
 eel.start('main.html', size = (471, 220))
-
