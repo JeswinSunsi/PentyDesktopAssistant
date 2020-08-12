@@ -1,0 +1,8 @@
+Eel == 0.13.2
+wolframalpha == 4.0.0
+wikipedia == 1.4.0
+pyshorteners == 1.0.1
+speedtest-cli == 2.1.2
+win10toast == 0.9
+getmac == 0.8.2
+pyjokes == 0.6.0
