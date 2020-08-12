@@ -3,6 +3,7 @@
 <head>
     <meta charset = "UTF-8">
     <meta name = "description" content = "Email Tab">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
     <meta name = "viewport" content = "width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>PENTY</title>
     <script type = "text/javascript" src = "swag-alert.min.js"></script>
@@ -66,12 +67,12 @@
 
   window.addEventListener("resize", function(){
     window.resizeTo(471, 220);
-  });              
+  });
  }
   </script>
 </head>
 <body>
 <input type = "email" id = "searchbar" placeholder = "Enter a valid email..">
 <textarea id = "content" rows = "6"></textarea>
-<input type = "image" id = "send" src = "Media/Icnsend.svg" onclick = "sendEmail()">
+<input type = "image" id = "send" src = "Media/Icnsend.svg" onclick = "sendEmail()" title = "Send Mail">
 </body>
