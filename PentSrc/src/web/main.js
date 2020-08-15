@@ -1,5 +1,8 @@
 async function answer() {
                 var quest = document.getElementById("data").value
+                swagAlert({
+                           title: "Penty",
+                           text: "Processing.."});
                 var val = await eel.mainBackend(quest)();
                 swagAlert({
                            title: "Penty",
@@ -25,5 +28,4 @@ window.onload=function(){
           document.getElementById("enterButton").click();
       }
   });
-
 }
