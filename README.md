@@ -1,5 +1,7 @@
 # Penty Desktop Assistant
 
+[![GitHub version](https://badge.fury.io/gh/jeswinsunsi%2Fpentydesktopassistant.svg)](https://badge.fury.io/gh/jeswinsunsi%2Fpentydesktopassistant)
+
 Penty is a Desktop Assistant programmed with JS and Python for its backend and HTML and CSS as its front. It has some cool in-built features, like an emailer, link shortener and a quick-open browser. The main highlight is that it can fetch simple answers from the web, such as the temperature, birthdates, and other quick answers and display them in a visually pleasing window. It uses a Python module named Eel to connect the backend to the GUI (https://github.com/samuelhwilliams/Eel/)
 
 ![pent start screen](https://github.com/JeswinSunsi/PentyDesktopAssistant/blob/master/PentSrc/src/web/Media/StartScrExample.PNG)
