@@ -3,7 +3,7 @@
 [![GitHub version](https://badge.fury.io/gh/jeswinsunsi%2Fpentydesktopassistant.svg)](https://badge.fury.io/gh/jeswinsunsi%2Fpentydesktopassistant) 
 ![GitHub version](https://img.shields.io/badge/build-passing-green)
 
-Penty is a Desktop Assistant programmed with JS and Python for its backend and HTML and CSS as its front. It has some cool in-built features, like an emailer, link shortener and a quick-open browser. The main highlight is that it can fetch simple answers from the web, such as the temperature, birthdates, and other quick answers and display them in a visually pleasing window. It uses a Python module named Eel to connect the backend to the GUI (https://github.com/samuelhwilliams/Eel/)
+Penty is a Desktop Assistant programmed with JS and Python for its backend and HTML and CSS as its front. It has some cool in-built features, like an emailer, link shortener, and a quick-open browser. The main highlight is that it can fetch simple answers from the web, such as the temperature, birthdates, and other quick answers, and display them in a visually pleasing window. It uses a Python module named Eel to connect the backend to the GUI (https://github.com/samuelhwilliams/Eel/)
 
 ![pent start screen](https://github.com/JeswinSunsi/PentyDesktopAssistant/blob/master/PentSrc/src/web/Media/StartScrExample.PNG) 
 
@@ -22,12 +22,12 @@ You will need a google app password for the mailer. (https://support.google.com/
 If you need the added functionality of WolframAlpha, you'll have to get a free API Key (https://products.wolframalpha.com/simple-api/documentation/)
 
 ## Searchbar commands
-Apart from answering simple questions, the searchbar can also be used to perform some quick actions when certain commands are typed out. All the commands work in both upper and lowercases.
+Apart from answering simple questions, the search bar can also be used to perform some quick actions when certain commands are typed out. All the commands work in both upper and lowercases.
 
 ![pent displays a joke](https://github.com/JeswinSunsi/PentyDesktopAssistant/blob/master/PentSrc/src/web/Media/JokeExample.PNG)
 
 - **{Search term}**
-  - You can search for almost anything and Penty will spew out a brief description of it. Stuff like when was x born, national anthem of the Soviet Union, Who was Guido Van Rossum, all work perfectly.
+  - You can search for almost anything and Penty will spew out a brief description of it. Stuff like when was x born, the national anthem of the Soviet Union, Who was Guido Van Rossum, all work perfectly.
 - **IP**
   - This shows the lan IP of the device
 - **MAC**
