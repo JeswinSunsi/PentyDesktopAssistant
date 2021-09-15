@@ -21,7 +21,8 @@ import pyjokes
 # Wolfram Alpha module
 @eel.expose
 def wlfrm(userinputglobal):
-  client = wolframalpha.Client('34U93P-WGR36VG7WE') # Add your wolfram Alpha App ID Key here
+  client = wolframalpha.Client('34U93P-WGR36VG7WE') # Add your wolfram Alpha App ID Key here 
+  # A later edit (On 15th Sept 2021 1:25pm GMT+4) - I wrote this code when I was 14 and I didn't know what secrets and .env variables were and now I'm too lazy to remove the wolframalpha secret key so please don't misuse or spam it dear kind internet stranger..
   res = client.query(userinputglobal)
   answer = (next(res.results).text)
   return answer
