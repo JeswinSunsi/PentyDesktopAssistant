@@ -3,69 +3,62 @@
 [![GitHub version](https://badge.fury.io/gh/jeswinsunsi%2Fpentydesktopassistant.svg)](https://badge.fury.io/gh/jeswinsunsi%2Fpentydesktopassistant) 
 ![GitHub version](https://img.shields.io/badge/build-passing-green)
 
-Penty is a Desktop Assistant programmed with JS and Python for its backend and HTML and CSS as its front. It has some cool in-built features, like an emailer, link shortener, and a quick-open browser. The main highlight is that it can fetch simple answers from the web, such as the temperature, birthdates, and other quick answers, and display them in a visually pleasing window. It uses a Python module named Eel to connect the backend to the GUI (https://github.com/samuelhwilliams/Eel/)
+Penty is a proof-of-concept Desktop Assistant designed in Python Eel. Features for the POC include an email client, link shortener, browser, and a WolframAlpha bot. Since it runs on Eel, it supports a GUI window that runs on Chromium.
 
 ![pent start screen](https://github.com/JeswinSunsi/PentyDesktopAssistant/blob/master/PentSrc/src/web/Media/StartScrExample.PNG) 
 
 ## Prerequisites 
 
 ### Modules
-Until you package Penty into an executable, you will have to manually import a lot of modules. The easiest way to do this is with PIP.
-
-You can install this from requirements.txt
+The easiest way to get up and running with PIP. Requirements are in requirements.txt
 
 ### Others
-This App currently only runs on a Windows platform (7 - 10)
+Since the POC uses a few OS specific modules, only Windows 7 - 11 is fully supported.
 
-You will need a google app password for the mailer. (https://support.google.com/accounts/answer/185833?hl=en)
-
-If you need the added functionality of WolframAlpha, you'll have to get a free API Key (https://products.wolframalpha.com/simple-api/documentation/)
+The WolframAlpha API key can be accessed from (https://products.wolframalpha.com/simple-api/documentation/)
 
 ## Searchbar commands
-Apart from answering simple questions, the search bar can also be used to perform some quick actions when certain commands are typed out. All the commands work in both upper and lowercases.
+Apart from answering simple questions, the search bar can also be used to perform quick actions when certain commands are typed in. The commands are not case sensitive.
 
 ![pent displays a joke](https://github.com/JeswinSunsi/PentyDesktopAssistant/blob/master/PentSrc/src/web/Media/JokeExample.PNG)
 
 - **{Search term}**
-  - You can search for almost anything and Penty will spew out a brief description of it. Stuff like when was x born, the national anthem of the Soviet Union, Who was Guido Van Rossum, all work perfectly.
+  - You can search for almost anything and Penty will spew out a brief description of it. Stuff like when was x born, the national anthem of the Soviet Union, Who is Guido Van Rossum, all work perfectly.
 - **IP**
-  - This shows the lan IP of the device
+  - Displays device IP
 - **MAC**
-  - Shows out the MAC address
+  - Displays device MAC
 - **Shorten {link address}**
-  - Shortens the provided link automatically through tinyurl.com. Do not type out the angle brackets.
+  - Returns a shortened link through tinyurl.com
 - **Shutdown/ shtdwn**
-  - Quick command to shutdown the device
+  - Shuts down the device
 - **Restart/ restrt**
-  - Quick command to restart the device
+  - Restarts the device
 - **Eval {math problem}**
-  - Uses WolframAlpha to solve complex math problems.
+  - Returns solutions to complex algebraic equations
 - **Download speed/ download**
-  - Shows the download speed (May not be completely accurate)
+  - Displays the download speed
 - **Upload speed/ upload**
-  - Shows the upload speed (May not be completely accurate)
+  - Displays the upload speed
 - **About**
-  - Displays a quick 'About Penty'
+  - Displays information on the POC
 - **System**
-  - Displays the System details (Operating system, Architecture, etc.)
-  
+  - Displays system specs & details
+  -   
 ## Icon use
-There are four main icons on the main page. These support the main script for more functions.
 Usage (top-left, top-right, bottom-left, bottom-right)
-- **Quick Browser**
-  - This can come handy when Pent cannot understand your question, cannot display a suitable answer, or the user just wants to quickly open the browser
-- **Gmail Sender**
-  - For quick mailings. Only supports Google Mail and plain text mails as of yet.
+- **Browser**
+  - Opens a broswer with provided query.
+- **Email client**
+  - Runs a basic gmail client.
 - **System**
-  - A quick way to get your device specs.
-- **Mail password changer**
-  - Should be configured once before first time usage of the inbuilt mailer. Requires the user's mail ID and a google generated app passwords. More on this at https://support.google.com/accounts/answer/185833?hl=en
+  - Displays device specs & details.
+- **Mail password manager**
+  - Must be configured once before using the mailing client. Requires mail ID and a google generated app-password. More on this at https://support.google.com/accounts/answer/185833?hl=en
   
 ## Packaging Pent
-Packaging Pent into a distributable .Exe is pretty straightforward. Pip install pyinstaller if you dont already have it. Then, delete the mail_creds.txt from the web folder.
-Navigate to the src directory where the web folder and App.py file is kept, through your terminal. Then, run 
+Packaging Pent into a distributable is straightforward, and uses PyInstaller. Start by deleting *mailcreds.txt*. Once deleted, navigate to the source directory through the terminal and run - 
 
 ```python -m eel app.py web --onefile```
 
-You can use most valid pyinstaller flags except --noconsole. A workaround for this has already been added into app.py.
-Your distributable file will be stored at src/dist. Move this to a new folder. Inside the folder, create a text document named mail_creds.txt and type in 1 and 2 on the first and second lines of the text file respectively. Also, to avoid having to open a folder then a file to run the program, you can make a shortcut to app.exe and leave it somewhere outside the main folder.
+Most PyInstaller flags except --noconsole are supported. A hacky-workaround replacement is coded into *App.py*.
