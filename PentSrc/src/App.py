@@ -2,6 +2,7 @@
 #!/usr/bin/env python
 
 #imports
+from tabnanny import check
 import eel
 from function import *
 
@@ -15,37 +16,38 @@ hideConsole()
 
 eel.init('web') # Initialize the 'web' folder where frontend and js is stored.
 
+
 # The logic that connects it with the user io.
 @eel.expose
 def mainBackend(userinput):
   global userinputglobal
   userinputglobal = userinput.lower()
-  #functions
+
+  # Function to check if query is present in userinputglobal
+  def check_for_query(*args):
+    return any(x in userinputglobal for x in args)
+
+  # Main functions
   try:
-    if ("download speed" in userinputglobal[:14]
-        or "download" in userinputglobal[:8]):
+    if check_for_query("download speed", "download"):
       return downloadcheck()
-    elif ("joke" in userinputglobal[:4] or "say joke" in userinputglobal[:8]
-          or "say a joke" in userinputglobal[:10]):
+    elif check_for_query("joke", "say joke", "say a joke"):
       return sayJoke()
-    elif 'eval' in userinputglobal[:4] or 'evaluate' in userinputglobal[:8]:
+    elif check_for_query("eval", "evaluate"):
       return complexMath(userinputglobal)
-    elif "about" in userinputglobal[:6] or "abt" in userinputglobal[:4]:
+    elif check_for_query("about", "abt"):
       return about()
-    elif ("upload speed" in userinputglobal[:13]
-          or "upload" in userinputglobal[:6]):
+    elif check_for_query("upload speed", "upload"):
       return uploadcheck()
-    elif "restart" in userinputglobal[:7] or "restrt" in userinputglobal[:6]:
+    elif check_for_query("restart", "restrt"):
       return restrt()
-    elif ("remind" in userinputglobal[:6]
-          or "set reminder" in userinputglobal[:12]
-          or "reminder" in userinputglobal[:8]):
+    elif check_for_query("reminder", "remind", "set reminder"):
       return reminder()
-    elif "ip" in userinputglobal[:2] or "ip address" in userinputglobal[:10]:
+    elif check_for_query("ip address", "ip"):
       return ipaddress()
-    elif "mac" in userinputglobal[:3] or "mac address" in userinputglobal[:11]:
+    elif check_for_query("mac address", "mac"):
       return macaddress()
-    elif 'system' in userinputglobal:
+    elif check_for_query("system", "system info", "sys"):
       return platforminfo()
     else:
       try:
@@ -53,6 +55,6 @@ def mainBackend(userinput):
       except:
         return wikiped(userinputglobal)
   except:
-    return "Something went wrong.."
+    return "Something went wrong..."
 
 eel.start('main.html', size = (471, 220))
