@@ -1,22 +1,23 @@
 # imports
-import eel
-import wolframalpha
-import wikipedia
-import pyshorteners.shorteners.tinyurl
-import speedtest
-import time
-import socket
-import os
-import platform
-import webbrowser
-import smtplib
 import ctypes
 import linecache
+import os
+import platform
+import smtplib
+import socket
+import time
+import webbrowser
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from win10toast import ToastNotifier
-from getmac import getmac
+
+import eel
 import pyjokes
+import pyshorteners.shorteners.tinyurl
+import speedtest
+import wikipedia
+import wolframalpha
+from getmac import getmac
+from win10toast import ToastNotifier
 
 # Wolfram Alpha module
 

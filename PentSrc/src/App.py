@@ -3,7 +3,9 @@
 
 # imports
 from tabnanny import check
+
 import eel
+
 from function import *
 
 # Useful when packaging Penty into an exe, since --noconsole in pyinstaller returns an error for some reason.
