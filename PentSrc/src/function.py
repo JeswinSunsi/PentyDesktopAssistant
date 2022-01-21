@@ -1,18 +1,13 @@
 # imports
-import ctypes
 import linecache
 import os
 import platform
 import smtplib
 import socket
-import time
 import webbrowser
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 
 import eel
 import pyjokes
-import pyshorteners.shorteners.tinyurl
 import speedtest
 import wikipedia
 import wolframalpha

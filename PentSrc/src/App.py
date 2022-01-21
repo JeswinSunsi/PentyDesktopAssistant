@@ -2,7 +2,8 @@
 #!/usr/bin/env python
 
 # imports
-from tabnanny import check
+
+import ctypes
 
 import eel
 
