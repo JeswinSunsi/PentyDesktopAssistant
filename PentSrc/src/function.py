@@ -38,17 +38,15 @@ def wikiped(userinputglobal):
 def email(RECV_ID, CONTENT):
   mainErrorMsg = "Something went wrong.."
   try:
-    if CONTENT != '':
-      MAIL_ID = linecache.getline(r"web/mreds.txt", 1)
-      PASS = linecache.getline(r"web/mreds.txt", 2)
-      server = smtplib.SMTP("smtp.gmail.com", 587)
-      server.starttls()
-      server.login(MAIL_ID, PASS)
-      server.sendmail( MAIL_ID, RECV_ID, CONTENT)
-      return f"Sending mail to {RECV_ID}"
-    else:
+    if CONTENT == '':
       return 'Cancelled mail successfully.'
-    linecache.clearcache()
+    MAIL_ID = linecache.getline(r"web/mreds.txt", 1)
+    PASS = linecache.getline(r"web/mreds.txt", 2)
+    server = smtplib.SMTP("smtp.gmail.com", 587)
+    server.starttls()
+    server.login(MAIL_ID, PASS)
+    server.sendmail( MAIL_ID, RECV_ID, CONTENT)
+    return f"Sending mail to {RECV_ID}"
   except (smtplib.SMTPAuthenticationError):
     return f"{mainErrorMsg} \n Please enter your credentials at mail settings."
   except (smtplib.SMTPRecipientsRefused):
