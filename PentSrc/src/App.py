@@ -22,31 +22,36 @@ def mainBackend(userinput):
   userinputglobal = userinput.lower()
   #functions
   try:
-    if "download speed" in userinputglobal[0:14] or "download" in userinputglobal[0:8]:
+    if ("download speed" in userinputglobal[:14]
+        or "download" in userinputglobal[:8]):
       return downloadcheck()
-    elif "joke" in userinputglobal[0:4] or "say joke" in userinputglobal[0:8] or "say a joke" in userinputglobal[0:10]:
+    elif ("joke" in userinputglobal[:4] or "say joke" in userinputglobal[:8]
+          or "say a joke" in userinputglobal[:10]):
       return sayJoke()
-    elif 'eval' in userinputglobal[0:4] or 'evaluate' in userinputglobal[0:8]:
+    elif 'eval' in userinputglobal[:4] or 'evaluate' in userinputglobal[:8]:
       return complexMath(userinputglobal)
-    elif "about" in userinputglobal[0:6] or "abt" in userinputglobal[0:4]:
+    elif "about" in userinputglobal[:6] or "abt" in userinputglobal[:4]:
       return about()
-    elif "upload speed" in userinputglobal[0:13] or "upload" in userinputglobal[0:6]:
+    elif ("upload speed" in userinputglobal[:13]
+          or "upload" in userinputglobal[:6]):
       return uploadcheck()
-    elif "restart" in userinputglobal[0:7] or "restrt" in userinputglobal[0:6]:
+    elif "restart" in userinputglobal[:7] or "restrt" in userinputglobal[:6]:
       return restrt()
-    elif "remind" in userinputglobal[0:6] or "set reminder" in userinputglobal[0:12] or "reminder" in userinputglobal[0:8]:
+    elif ("remind" in userinputglobal[:6]
+          or "set reminder" in userinputglobal[:12]
+          or "reminder" in userinputglobal[:8]):
       return reminder()
-    elif "ip" in userinputglobal[0:2] or "ip address" in userinputglobal[0:10]:
+    elif "ip" in userinputglobal[:2] or "ip address" in userinputglobal[:10]:
       return ipaddress()
-    elif "mac" in userinputglobal[0:3] or "mac address" in userinputglobal[0:11]:
+    elif "mac" in userinputglobal[:3] or "mac address" in userinputglobal[:11]:
       return macaddress()
     elif 'system' in userinputglobal:
       return platforminfo()
     else:
-        try:
-          return wlfrm(userinputglobal)
-        except:
-          return wikiped(userinputglobal)
+      try:
+        return wlfrm(userinputglobal)
+      except:
+        return wikiped(userinputglobal)
   except:
     return "Something went wrong.."
 
