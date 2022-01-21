@@ -97,28 +97,27 @@ def sayJoke():
 
 # Toast Reminder
 @eel.expose
-def reminder():
-    remind = ToastNotifier()
-    if "set reminder" in userinputglobal:
-      remind_text = userinputglobal.replace('set reminder', "")
-    elif "reminder" in userinputglobal:
-      remind_text = userinputglobal.replace('reminder', "")
-    elif "remind" in userinputglobal:
-      remind_text = userinputglobal.replace("remind", "")
-    timefactor = 0
-    for infactor in remind_text.split():
-        if infactor.isdigit():
-          timefactor = int(infactor)
-          #print (timefactor) [For Devt Only]
-    if timefactor == 0:
-      eel.sleep(2)
-      return "Please set a duration."
-    remind_text = remind_text.replace(infactor, "")
-    remind_text = remind_text.replace("after", "")
-    eel.sleep(timefactor)
-    retvalue = remind.show_toast("Reminder", remind_text, icon_path='fav.ico', duration = 20)
-    return remind_text
-    return retvalue
+def reminder(userinputglobal):
+  remind = ToastNotifier()
+  if "set reminder" in userinputglobal:
+    remind_text = userinputglobal.replace('set reminder', "")
+  elif "reminder" in userinputglobal:
+    remind_text = userinputglobal.replace('reminder', "")
+  elif "remind" in userinputglobal:
+    remind_text = userinputglobal.replace("remind", "")
+  timefactor = 0
+  for infactor in remind_text.split():
+      if infactor.isdigit():
+        timefactor = int(infactor)
+        #print (timefactor) [For Devt Only]
+  if timefactor == 0:
+    eel.sleep(2)
+    return "Please set a duration."
+  remind_text = remind_text.replace(infactor, "")
+  remind_text = remind_text.replace("after", "")
+  eel.sleep(timefactor)
+  retvalue = remind.show_toast("Reminder", remind_text, icon_path='fav.ico', duration = 20)
+  return remind_text
 
 # Quick Restart
 @eel.expose
