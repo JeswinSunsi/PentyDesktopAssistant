@@ -44,7 +44,6 @@ Apart from answering simple questions, the search bar can also be used to perfor
   - Displays information on the POC
 - **System**
   - Displays system specs & details
-  -   
 ## Icon use
 Usage (top-left, top-right, bottom-left, bottom-right)
 - **Browser**
